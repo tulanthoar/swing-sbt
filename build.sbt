@@ -19,7 +19,7 @@ lazy val root = (project in file(".")).
     scalaSource in Test := baseDirectory.value / "test",
 
     // add a test dependency on ScalaCheck
-    libraryDependencies += scalacheck % Test,
+    //libraryDependencies += scalacheck % Test,
     
     // append several options to the list of options passed to the Java compiler
     javacOptions ++= Seq("-source", "1.5", "-target", "1.5"),
@@ -55,7 +55,7 @@ lazy val root = (project in file(".")).
     javaHome := Some(file("/usr/lib/jvm/sun-jdk-1.6")),
 
     // Use Scala from a directory on the filesystem instead of retrieving from a repository
-    scalaHome := Some(file("/home/user/scala/trunk/")),
+    //scalaHome := Some(file("/home/user/scala/trunk/")),
 
     // don't aggregate clean (See FullConfiguration for aggregation details)
     aggregate in clean := false,
