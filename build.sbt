@@ -2,21 +2,15 @@
 lazy val commonSettings = Seq(
   organization := "org.myproject",
   version := "0.1.0",
-  // set the Scala version used for the project
+// set the Scala version used for the project
   scalaVersion := "2.11.7"
 )
 
-lazy val root = (project in file(".")).
+lazy val app = (project in file(".")).
   settings(commonSettings: _*).
   settings(
     // set the name of the project
-    name := "My Project",
-
-    // set the main Scala source directory to be <base>/src
-    scalaSource in Compile := baseDirectory.value / "src",
-
-    // set the Scala test source directory to be <base>/test
-    scalaSource in Test := baseDirectory.value / "test",
+    name := "app",
 
     // add a test dependency on ScalaCheck
     //libraryDependencies += scalacheck % Test,
@@ -36,10 +30,8 @@ lazy val root = (project in file(".")).
       |}""".stripMargin,
 
     // set the initial commands when entering 'console' or 'consoleQuick', but not 'consoleProject'
-    initialCommands in console := "import com.codenvy.example.scala._",
+    //initialCommands in console := "import com.codenvy.example.scala._",
     
-
-
     // set the prompt (for the current project) to include the username
     shellPrompt := { state => System.getProperty("user.name") + "  " + Project.extract(state).currentRef.project + "> " },
 
@@ -65,7 +57,7 @@ lazy val root = (project in file(".")).
 
     // only show warnings and errors on the screen for all tasks (the default is Info)
     //  individual tasks can then be more verbose using the previous setting
-    //logLevel := Level.Warn,
+    logLevel := Level.Warn,
 
     // only store messages at info and above (the default is Debug)
     //   this is the logging level for replaying logging with 'last'

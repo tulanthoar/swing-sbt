@@ -1,5 +1,3 @@
-package com.codenvy.example.scala
-
 /**
  * @author ${user.name}
  */
