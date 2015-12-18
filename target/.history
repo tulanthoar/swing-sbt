@@ -1,1 +1,6 @@
 run
+run:App
+run
+run:com.codenvy.example.scala.App
+run
+run "hi you me"
