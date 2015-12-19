@@ -11,7 +11,7 @@ lazy val app = (project in file(".")).
   settings(
     // set the name of the project
     name := "app",
-
+    //libraryDependencies += "com.codenvy" % "example-swing" % "1.0",
     // add a test dependency on ScalaCheck
     //libraryDependencies += scalacheck % Test,
     
@@ -19,7 +19,7 @@ lazy val app = (project in file(".")).
     javacOptions ++= Seq("-source", "1.7", "-target", "1.7"),
 
     // append -deprecation to the options passed to the Scala compiler
-    scalacOptions += "-deprecation",
+    scalacOptions ++= Seq("-deprecation", "-feature"),
 
     // define the statements initially evaluated when entering 'console', 'consoleQuick', or 'consoleProject'
     initialCommands := """
