@@ -1,1 +1,1 @@
-{"mixinTypes":[],"builders":{"configs":{}},"runners":{"configs":{}},"description":"examples using swing","type":"blank","attributes":{}}
+{"mixinTypes":[],"builders":{"configs":{}},"runners":{"configs":{"project:/Copy%20of%20VNC%20%20Java%207":{"ram":1000,"variables":{"configurationType":"blank"},"options":{}}},"default":"project:/Copy%20of%20VNC%20%20Java%207"},"description":"examples using swing","type":"blank","attributes":{}}
