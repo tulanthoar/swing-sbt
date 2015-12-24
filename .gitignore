@@ -1,2 +1,11 @@
 .codenvy/runners/
 .codenvy/project.json
+/bin/
+.cache-main
+.classpath
+.codenvy/misc.xml
+.scalastyle
+.settings/
+lib_managed/
+project/
+target/

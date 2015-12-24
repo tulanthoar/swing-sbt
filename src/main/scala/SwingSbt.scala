@@ -1,4 +1,6 @@
 import scala.language.postfixOps
+import javax.imageio.ImageIO;
+import java.net.URL;
 
 /** @object App
  *  @author ${user.name}
@@ -6,13 +8,13 @@ import scala.language.postfixOps
 object SwingSbt {
 
   def main( args : Array[String] ) {
+    lazy val scalaImg = ImageIO read new URL( "http://scala-lang.org/resources/img/smooth-spiral.png")
     println( "Swing Sbt!" )
-    var client = new Company()
-    client setName "Client Company"
-    println( client getName )
-    var hi = new HelloWindow()
-    hi find_img "http://scala-lang.org/resources/img/smooth-spiral.png"
-    hi draw client
+    val client = new Company("Client Company")
+    println( client.getName() )
+    var window = new HelloWindow()
+    window.setImg(scalaImg)
+    window.draw(client)
   }
 
 }
