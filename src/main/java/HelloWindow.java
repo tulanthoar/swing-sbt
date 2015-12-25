@@ -8,13 +8,13 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class HelloWindow {
-  JFrame    frame     = new JFrame();
-  JMenuBar  menuBar   = new JMenuBar();
-  JMenu     helloMenu = new JMenu("Get Greeting");
-  JMenuItem helloItem = new JMenuItem("Say Hello");
-  JMenu     exitMenu  = new JMenu("Exit");
-  JMenuItem closeItem = new JMenuItem("Close");
-  Image     imageIcon = null;
+  private JFrame    frame     = new JFrame();
+  private JMenuBar  menuBar   = new JMenuBar();
+  private JMenu     helloMenu = new JMenu("Get Greeting");
+  private JMenuItem helloItem = new JMenuItem("Say Hello");
+  private JMenu     exitMenu  = new JMenu("Exit");
+  private JMenuItem closeItem = new JMenuItem("Close");
+  private Image     imageIcon = null;
 
   public HelloWindow() {
     // Create a new menubar
@@ -47,7 +47,7 @@ public class HelloWindow {
     ScreenSizer screen = new ScreenSizer();
     frame.setSize(screen.w() / 2, screen.h() / 2);
     // Center the jframe on screen
-    BasicPoint pt = new BasicPoint(500,500);
+    BasicPoint pt = new BasicPoint(500, 500);
     frame.setLocation(pt.x(), pt.y());
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
@@ -55,15 +55,14 @@ public class HelloWindow {
   public void setImg(Image img) {
     imageIcon = img;
   }
-  public Image  findImg(String address) {
+
+  public void findImg(String address) {
     // Use image from URL
     try {
-      Image img = ImageIO.read(new URL(address));
-      return img;
+      imageIcon = ImageIO.read(new URL(address));
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return null;
   }
 
   public void draw(Company comp) {
@@ -71,7 +70,7 @@ public class HelloWindow {
 
     // get image if not gotten
     if (imageIcon == null)
-      setImg (findImg("https://upload.wikimedia.org/wikipedia/en/f/fa/Codenvy_Logo.jpg"));
+      findImg("https://upload.wikimedia.org/wikipedia/en/f/fa/Codenvy_Logo.jpg");
 
     // Add a new JLabel
     JLabel label = new JLabel(new ImageIcon(imageIcon));

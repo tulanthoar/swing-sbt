@@ -11,7 +11,7 @@ object SwingSbt {
     lazy val scalaImg = ImageIO read new URL( "http://scala-lang.org/resources/img/smooth-spiral.png")
     println( "Swing Sbt!" )
     val client = new Company("Client Company")
-    println( client.getName() )
+    println( client getName )
     var window = new HelloWindow()
     window.setImg(scalaImg)
     window.draw(client)

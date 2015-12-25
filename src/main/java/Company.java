@@ -1,9 +1,9 @@
 public class Company {
-  private String myName;
+  private String name;
   public Company (String name) {
-    this.myName = name;
+    this.name = name;
   }
   public String getName() {
-    return this.myName;
+    return name;
   }
 }
