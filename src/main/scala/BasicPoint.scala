@@ -1,9 +1,5 @@
-class BasicPoint( xc : Int, yc : Int ) {
-  var x : Int = xc
-  var y : Int = yc
-  def move( dx : Int, dy : Int ) {
-    x = x + dx
-    y = y + dy
-  }
-  override def toString() : String = "("+x+", "+y+")";
+class BasicPoint( xc: Int, yc: Int ) {
+  val x = xc
+  val y = yc
+  override def toString(): String = "(" + x + ", " + y + ")";
 }
